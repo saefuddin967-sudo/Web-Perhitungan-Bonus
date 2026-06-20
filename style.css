@@ -1,0 +1,220 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px 20px;
+    background:radial-gradient(circle at top,#6a11cb,#2575fc,#0f0c29);
+    overflow-y:auto;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* Glow Background */
+body::before{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(255,0,200,.35);
+    filter:blur(120px);
+    top:10%;
+    left:10%;
+    z-index:0;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(0,255,255,.25);
+    filter:blur(120px);
+    bottom:10%;
+    right:10%;
+    z-index:0;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:30px;
+    position:relative;
+    z-index:1;
+}
+
+/* CARD FORM */
+.card{
+    width:450px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+    color:#fff;
+}
+
+/* HEADER */
+.header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.header .icon{
+    width:60px;
+    height:60px;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(45deg,#ff00cc,#3333ff);
+    font-size:25px;
+}
+
+.header h1{
+    font-size:30px;
+}
+
+.header h1 span{
+    color:#ff4fd8;
+}
+
+.header p{
+    font-size:14px;
+    opacity:.8;
+}
+
+/* INPUT */
+.input-group{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(255,255,255,.12);
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.input-group i{
+    width:20px;
+    color:white;
+}
+
+.input-group input{
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:white;
+    font-size:16px;
+}
+
+.input-group input::placeholder{
+    color:#ddd;
+}
+
+/* BUTTON */
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+button{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    transition:.3s;
+}
+
+.btn-hitung{
+    background:linear-gradient(45deg,#00c853,#64dd17);
+}
+
+.btn-reset{
+    background:linear-gradient(45deg,#ff1744,#d50000);
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* BONUS */
+#bonus{
+    text-align:center;
+    margin-top:20px;
+    color:#ffd54f;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* HASIL */
+.hasil{
+    width:420px;
+    display:none;
+    background:white;
+    color:#333;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.hasil h2{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:34px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    margin:15px 0;
+    font-size:18px;
+}
+
+.total{
+    margin-top:20px;
+    padding-top:15px;
+    border-top:2px solid #ddd;
+    font-size:22px;
+    font-weight:bold;
+    color:#2e7d32;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    body{
+        padding:20px;
+    }
+
+    .container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card,
+    .hasil{
+        width:100%;
+        max-width:550px;
+    }
+
+}
